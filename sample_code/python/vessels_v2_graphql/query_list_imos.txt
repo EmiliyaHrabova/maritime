@@ -1,0 +1,26 @@
+query getVessels($imo: [IMO!]){
+  vessels(imo: $imo) {
+     pageInfo {
+      hasNextPage
+      endCursor
+    }
+    nodes {
+      id
+      updateTimestamp
+      staticData {
+        name
+        imo
+      }
+      lastPositionUpdate {
+        heading
+        latitude
+        longitude
+        speed
+        timestamp
+      }
+      currentVoyage {
+        draught
+      }
+    }
+  }
+}
